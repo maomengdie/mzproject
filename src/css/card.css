@@ -1,0 +1,63 @@
+
+
+.card{
+    background: #fff;
+}
+.card .cardtop{
+    width: 100%;
+    height: 45px;
+    box-shadow: 0 -1px #ff7100 inset;
+}
+.card .cardtop span{
+    display: block;
+    width: 50%;
+    height: 92%;
+    float: left;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+    color: #333;
+    transition: all .2s;    
+}
+
+.card .cardmain{
+    margin-top: 40px;
+    padding: 0 32px;
+}
+.card .cardmain .cardnumber{
+    margin-top: 30px;    
+}
+.card .cardmain .cardnumber label{
+    font-weight: normal;
+    line-height: 34px;
+    margin: 0 15px 0 10px;
+    float: left;
+}
+.card .cardmain .cardnumber input{
+    background-color: transparent;
+    height: 34px;
+    width: 55%;
+    font-size: 14px;
+    vertical-align: top;
+    border: none;
+    outline: medium;
+}
+.card .cardmain .cardnumber div{
+    border-width: 0px 1px 1px;
+    border-style: solid;
+    border-color: #ccc;
+    height: 5px;
+    margin-top: -5px;
+}
+.card .cardmain button{
+    display: block;
+    width: 160px;
+    margin: 25px auto 30px;
+    border-radius: 18px;
+    background-color: #fe8233;
+    height: 36px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 36px;
+    border: none;
+}

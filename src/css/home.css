@@ -1,0 +1,144 @@
+
+
+/************banner图部分************/
+.home{
+	background: #eee;
+	overflow: auto;
+}
+
+.home .swiper-container {
+    width: 100%;
+} 
+.home .swiper-container img{
+	width: 100%;
+}
+
+
+/************热映电影部分************/
+.home .hotmovies{
+	margin: 15px;
+}
+.home .hotmovies .hotmovies-list{
+	width: 100%;
+	background: #eee;
+}
+.home .hotmovies .hotmovies-list li{
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0.5px 0.5px 1px #a8a8a8;
+}
+.home .hotmovies .hotmovies-list li img{
+	width: 100%;
+}
+.home .hotmovies .hotmovies-list li .movieinfo{
+	padding:10px;
+	position: relative;
+}
+.home .hotmovies .hotmovies-list li .movieinfo h3{
+	color: #333;
+	font-size: 14px;
+}
+.home .hotmovies .hotmovies-list li .movieinfo p{
+	color: #999;
+	font-size: 12px;
+}
+.home .hotmovies .hotmovies-list li .movieinfo span{
+	
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	color: orangered;
+	font-size: 18px;
+	margin-top: -12px;
+}
+
+.home .hotmovies .morehotmovies{
+	width: 100%;
+}
+.home .hotmovies .morehotmovies span{
+	display: block;
+	width: 160px;
+    height: 30px;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    margin: 10px auto 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #616161;
+    cursor: pointer;
+}
+
+
+/************热映电影部分************/
+.home .upcomingmovies{
+	margin:0 15px;
+}
+.home .upcomingmovies .comingtop{
+	position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #a8a8a8;  
+}
+.home .upcomingmovies .comingtop span{
+	display: block;
+	width: 65px;
+    height: 20px;
+    margin: 0 auto;
+    margin-bottom: -10px;
+    border-radius: 5px;
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #eee;
+    background-color: #a7a7a7;
+}
+
+.home .upcomingmovies .upcomingmovies-list{
+	width: 100%;
+	background: #eee;
+}
+.home .upcomingmovies .upcomingmovies-list li{
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0.5px 0.5px 1px #a8a8a8;
+}
+
+.home .upcomingmovies .upcomingmovies-list li img{
+	width: 100%;
+}
+.home .upcomingmovies .upcomingmovies-list li .movieinfo{
+	padding:10px;
+	position: relative;
+}
+.home .upcomingmovies .upcomingmovies-list li .movieinfo h3{
+	color: #333;
+	font-size: 14px;
+}
+
+.home .upcomingmovies .upcomingmovies-list li .movieinfo span{
+	
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	color: orangered;
+	font-size: 12px;
+	margin-top: -8px;
+}
+
+.home .upcomingmovies .moreupcomingmovies{
+	width: 100%;
+}
+.home .upcomingmovies .moreupcomingmovies span{
+	display: block;
+	width: 160px;
+    height: 30px;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    margin: 10px auto 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #616161;
+    cursor: pointer;
+}

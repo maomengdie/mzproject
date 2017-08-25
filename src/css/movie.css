@@ -1,0 +1,120 @@
+
+/*********************电影顶部**********************/
+
+.movie{
+	overflow: auto;
+	background: #fff;
+}
+.movie .movietop{
+    padding:0 15px;
+    height: 46px;
+    margin: 0 auto;
+    border-bottom: solid #fe6e00 1px;   
+}
+.movie .movietop a .moviehot{
+	display: inline-block;
+	float: left;
+    width: 50%;
+    height: 94%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 46px;
+    color: #6a6a6a;
+    cursor: pointer;
+}
+.movie .movietop a .moviecoming{
+	display: inline-block;
+	float: left;
+    width: 50%;
+    height: 94%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 46px;
+    color: #6a6a6a;
+    cursor: pointer;
+}
+
+
+
+/*********************电影列表**********************/
+
+
+.movie .movie-list{
+    padding:0 15px;
+}
+
+.movie .movie-list .movies-cont{
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: dashed 1px #c9c9c9;
+    cursor: pointer;
+
+}
+.movie .movie-list .movies-cont .imgae-cont{    
+    width: 60px;
+    float: left;
+    overflow: hidden;
+
+    
+}
+.movie .movie-list .movies-cont .imgae-cont .image{ 
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.movie .movie-list .movies-cont .imgae-cont .image img{ 
+    vertical-align: middle;
+    width: 100%
+}
+
+.movie .movie-list .movies-cont .text-cont{
+    padding-left: 15px;
+    display: inline-block;
+    width: 74%;
+}
+.movie .movie-list .movies-cont .text-cont h2{
+    font-size: 16px;
+    line-height: 32px;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.movie .movie-list .movies-cont .text-cont h2 span{
+     float: right;
+    font-size: 16px;
+    line-height: 32px;
+    color: #fc7103;
+}
+.movie .movie-list .movies-cont .text-cont h2 i{
+    float: right;
+    line-height: 29px;
+    color: #c6c6c6;
+    font-size: 10px;
+    display: inline-block;
+    transform: scale(.8);
+}
+.movie .movie-list .movies-cont .text-cont p{
+    height: 24px;
+    line-height: 24px;
+    color: #8e8e8e;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+}
+.movie .movie-list .movies-cont .text-cont .grade{
+    line-height: 24px;
+    color: #8e8e8e;
+    font-size: 12px;
+     
+}
+.movie .movie-list .movies-cont .text-cont .grade i{
+     color: #8aa2bf;
+} 
+.movie .movie-list .movies-cont .text-cont .grade .date{
+    color: #ffb375;
+}     
+      

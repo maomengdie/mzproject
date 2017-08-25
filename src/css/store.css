@@ -1,0 +1,189 @@
+
+/*************轮播图部分***************/
+
+.store{
+    background: #eee;
+    overflow: auto;
+    width: 100%;
+}
+.store .swiper-container {
+    width: 100%;
+} 
+.store .swiper-container img{
+	width: 100%;
+}
+.store .swiper-container .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #666;
+}
+
+
+/*************分类部分***************/
+
+.store .storemain {
+    width: 100%;
+} 
+
+.store .storemain .littlecly{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    margin-bottom: 9px;
+     background: #fff;
+}
+
+.store .storemain .littlecly li{
+    width: 25%;
+    margin: 8px 0;  
+}
+.store .storemain .littlecly li a{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.store .storemain .littlecly li a img{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+.store .storemain .littlecly li a span{
+   color: #333;
+   font-size: 12px;
+}
+
+
+
+/*************39￥封顶 非常推荐 部分***************/
+
+
+.store .storemain .center{
+    padding: 0 10px;
+    margin-bottom: 9px;
+    background: #fff;
+    display: flex;
+}
+.store .storemain .center div{
+    width: 50%;
+    padding: 10px 0;
+}
+.store .storemain .center div img{
+    width: 175px;
+}
+
+
+/*************大分类 部分***************/
+
+.store .storemain .bigclassify{
+    width: 100%;
+}
+.store .storemain .bigclassify .classify-cont{
+    padding: 10px;
+    margin-bottom: 9px;
+    background: #fff;
+}
+.store .storemain .bigclassify .classify-cont img{
+    width: 100%;
+}
+.store .storemain .bigclassify .classify-cont .small-classify-cont{
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: flex;
+}
+.store .storemain .bigclassify .classify-cont .small-classify-cont .small-classify{
+    width: 100px;
+    margin-top: 3px;
+}
+.store .storemain .bigclassify .classify-cont .small-classify-cont .small-classify img{
+    width: 85px;
+    margin-right: 15px;
+    margin-bottom: 6px;
+}
+.store .storemain .bigclassify .classify-cont .small-classify-cont .small-classify p{
+    width: 85px;
+    margin-right: 15px;
+    overflow: hidden;
+    color: #333;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+.store .storemain .bigclassify .classify-cont .small-classify-cont .small-classify span{
+    display: inline-block;
+    font-size: 13px;
+    color: #ff6640;
+    margin-bottom: 7px;
+}
+
+.store .storemain .bigclassify .classify-cont .small-classify-cont .last-small-classify{
+    width: 100px;
+    margin-top: 3px;
+}
+.store .storemain .bigclassify .classify-cont .small-classify-cont .last-small-classify span{
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    line-height: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: #ccc;
+    display: inline-block;
+    margin: 30px 25px 0 25px;
+}
+
+
+
+/*************************商品列表部分*********************/
+
+.store .store-list{
+    width: 100%;
+}
+
+.store .store-list .tittle{
+    width: 100%;
+    height: 37px;
+    line-height: 33px;
+    font-size: 13px;
+    text-align: center;
+    color: #323232;
+    margin-bottom: -5px;
+}
+.store .store-list .store-list-cont{
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.store .store-list .store-list-cont .store-list-detil{
+    width: 50%;
+    margin-bottom: 8px;
+}
+.store .store-list .store-list-cont .store-list-detil .detil-cont{
+    width: 170px;
+    margin: 0 auto;
+    background: #fff;
+}
+.store .store-list .store-list-cont .store-list-detil .detil-cont img{
+    width: 100%;
+    margin-bottom: 5px;
+}
+.store .store-list .store-list-cont .store-list-detil .detil-cont p{
+    color: #333;
+    font-size: 12px;
+    height: 34px;
+    padding-left: 5px;
+}
+.store .store-list .store-list-cont .store-list-detil .detil-cont div{
+    font-size: 13px;
+    color: #999;
+    padding-bottom: 8px;
+    padding-left: 5px;
+}
+.store .store-list .store-list-cont .store-list-detil .detil-cont div span{
+    color: #ff6640;
+}
+

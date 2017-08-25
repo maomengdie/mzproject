@@ -1,0 +1,96 @@
+
+.citys{
+   background-color: #ebebeb;
+   overflow: auto;
+}
+.citys .citytop .gpscity div{
+    padding-left: 15px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: #333;
+
+}
+.citys .citytop .gpscity ul{
+    width: 100%;
+    font-size: 16px;
+    line-height: 47px;
+    height: 47px;
+     color: #e2941a;
+     background: #fff;
+}
+.citys .citytop .gpscity ul.hotcitylist{
+    color: #666;
+}
+    
+.citys .citytop .gpscity ul li{
+    width: 25%;
+    float: left;
+    text-align: center;
+} 
+.citys .letterArr{
+    width: 100%;
+    background: #fff;
+    display: flex;
+     flex-wrap: wrap;
+}  
+.citys .letterArr li{
+    width: 25%; 
+    background: #fff;
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+} 
+
+.citys .citymain{
+    width: 100%;
+}
+.citys .citymain>li .lettertop{
+    padding-left: 15px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: #333;
+}
+.citys .citymain>li .lettercity{
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.citys .citymain>li .lettercity li{
+    width: 25%; 
+    background: #fff;
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

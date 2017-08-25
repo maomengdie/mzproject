@@ -1,0 +1,90 @@
+
+.moviedetil{
+    background: #fff;
+    overflow: auto;
+} 
+.moviedetil .img{
+    width: 100%;
+}  
+.moviedetil .img img{
+    width: 100%;
+}
+
+.moviedetil .detiltext{
+    width: 100%;   
+}
+.moviedetil .detiltext h2{
+    margin: 16px auto;
+    border-left: 16px solid RGB(228, 200, 156);
+    font-size: 16px;
+    padding-left: 4px;
+
+        height: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+.moviedetil .detiltext .direct{
+    height: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 12px;
+}
+.moviedetil .detiltext .actor{
+    height: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 12px;
+}
+.moviedetil .detiltext .language{
+    height: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 12px;
+}
+.moviedetil .detiltext .type{
+    height: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 12px;
+}
+.moviedetil .detiltext .date{
+    height: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 12px;
+}
+.moviedetil .detiltext .describe{
+
+    font-size: 12px;
+    text-overflow: ellipsis;
+    margin-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+        
+}
+.moviedetil .btn{
+    text-align: center;
+    position: fixed;
+    bottom:20px;
+    left:50%;
+    margin-left: -78px;
+}
+.moviedetil .btn>button{
+    font-size: 14px;
+    min-width: 156px;
+    height: 36px;
+    line-height: 36px;
+    border: none;
+    background-color: #fe8233;
+    padding: 0;
+    margin: 0;
+    border-radius: 18px;
+    color: #fff;
+    -webkit-transition: 0.5s ease;
+}

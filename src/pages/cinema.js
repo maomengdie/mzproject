@@ -17,16 +17,11 @@ export default class Cinema extends Component{
 		}
 	}
 	render(){
-
-	
-		
 		return (
 			<div class='page cinema' >
 				<ul class='cinemalist'>
 				    {   
-					 
 					    this.state.cinemaData.map((item,index)=>{
-
 
 						    if(this.state.areaArr.indexOf(item.district.name)==-1){
 							    this.state.areaArr.push(item.district.name)
@@ -71,14 +66,13 @@ export default class Cinema extends Component{
 														)
 												    }
 											    })											  											  
-										   }
+										    }
 									    </ul>
 									</li>
 								)	
-						   } 										  
-					   }) 
-
-				  } 
+						    } 										  
+					    }) 
+				   } 
 				</ul>
 			</div>
 		)
@@ -87,8 +81,8 @@ export default class Cinema extends Component{
 	cineamShowAction(i){
 		console.log(i)
 		//console.log(this)
-		this.setState({show:!this.state.show})
-			console.log(this.state.show)
+		//this.setState({show:!this.state.show})
+		console.log(this.state.show)
 	}
 
 	componentWillMount(){ 

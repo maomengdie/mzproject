@@ -54,7 +54,7 @@ export default class Moviedetil extends Component{
 					<div class='describe'>{this.state.moviesDetilData.synopsis}</div>
 				</div>
 				<div class='btn'>
-					<button>立即购票</button>
+					<button onClick={this.goCinemaAction.bind(this)}>立即购票</button>
 				</div>
 			</div>
 		)
@@ -69,9 +69,12 @@ export default class Moviedetil extends Component{
 			
 			 this.setState({moviesDetilData:res})
 			 this.setState({actorArr:res.actors})
-			  console.log(res)
+			 // console.log(res)
 
 		})
+	}
+	goCinemaAction(){
+		this.props.history.push('/cinema')
 	}
 }
 

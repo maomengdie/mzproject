@@ -54,7 +54,7 @@ export default class Home extends Component{
 				        }
 				    </ul>
 				    <div class='morehotmovies'>
-				       <span>更多热映电影</span>
+				       <span onClick={this.moreMovies.bind(this,'hot')}>更多热映电影</span>
 				    </div>
 				</div>
 				<div class='upcomingmovies'>
@@ -77,7 +77,7 @@ export default class Home extends Component{
 				        }
 				    </ul>
 				    <div class='moreupcomingmovies'>
-				       <span>更多即将上映电影</span>
+				       <span onClick={this.moreMovies.bind(this,'coming')}>更多即将上映电影</span>
 				    </div>
 				</div>
 			</div>
@@ -120,6 +120,12 @@ export default class Home extends Component{
 		this.state.history.push({
 			pathname:'/moviedetil',
 			search: `?id=${id}`			
+		})
+	}
+	moreMovies(x){
+		this.state.history.push({
+			pathname:'/movie',
+			search: `?id=${x}`			
 		})
 	}	
 }

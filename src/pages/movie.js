@@ -10,9 +10,10 @@ export default class Movie extends Component{
 	constructor({history}){
 		super();
 		//console.log(rest);
-		this.state = {	
+		this.state = {
+			show:true,	
 			leftCheck:true,
-			rightCheck: true,
+			rightCheck:false,
 			moviesData:[],
 			history,
 			moviesData01:[]
@@ -24,8 +25,8 @@ export default class Movie extends Component{
 			borderBottom:this.state.leftCheck?"solid":"none"
 		}
 		var rightStyle={
-			color:this.state.rightCheck?"#6a6a6a":"#fe6e00",
-			borderBottom:this.state.rightCheck?"none":"solid"
+			color:this.state.rightCheck?"#fe6e00":"#6a6a6a",
+			borderBottom:this.state.rightCheck?"solid":"none"
 		}
 		return (
 			<div class='page movie'>
@@ -38,7 +39,7 @@ export default class Movie extends Component{
 				    </a>
 				</div>
 				<ul class='movie-list'>
-				   {    this.state.leftCheck ?
+				   {    this.state.show ?
 				    	this.state.moviesData.map((item,index)=>{
 				    		return (
 				    			<li key={index}>
@@ -110,18 +111,32 @@ export default class Movie extends Component{
        //请求电影部分即将上映电影数据  
 		Services.getMoviesDataComing()
 		.then((res)=>{
-			console.log(res)
+			//console.log(res)
 		    this.setState({moviesData01:res});	
 		})
+
+		var id=this.state.history.location.search
+		var aid=id.slice(id.indexOf('=')+1,id.length)
+		if(aid=='coming'){
+            this.setState({show:false});
+		    this.setState({leftCheck:false});
+		    this.setState({rightCheck:true});
+		}else{
+            this.setState({show:true});
+		    this.setState({leftCheck:true});
+		    this.setState({rightCheck:false});	
+		}
+		
 	}
 	chackActionLeft(){
-		
-		this.setState({leftCheck:!this.state.leftCheck});
-		this.setState({rightCheck:!this.state.rightCheck});	
+		this.setState({show:true});
+		this.setState({leftCheck:true});
+		this.setState({rightCheck:false});	
 	}
 	chackActionRight(){
-		this.setState({rightCheck:!this.state.rightCheck});
-		this.setState({leftCheck:!this.state.leftCheck});
+		this.setState({show:false});
+		this.setState({leftCheck:false});
+		this.setState({rightCheck:true});	
 	}
 	goDetilAction(id){
 		console.log(id)

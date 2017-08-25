@@ -22,14 +22,16 @@ export default class Home extends Component{
 	render(){
 		
 		return (
-			<div class='page home'>
+			<div class='page home' onWheel={this.handleWheel.bind(this)} ref='scrolldom'>
 				<div ref='banner' class="swiper-container">
 				    <div class="swiper-wrapper">
 				        {
 				        	this.state.bannerData.map((item,index)=>{
 				        		return (
 				        			<div key={index} class="swiper-slide">	
-				        			   <img src={item.imageUrl}/>
+										<a href={item.url}>
+				        			        <img src={item.imageUrl}/>
+									    </a>
 				                   </div>
 				        		)
 				        	})				        	
@@ -80,6 +82,11 @@ export default class Home extends Component{
 				       <span onClick={this.moreMovies.bind(this,'coming')}>更多即将上映电影</span>
 				    </div>
 				</div>
+				<div class='go-top'>
+					<div class='go-top-cont'>
+						&uArr;
+					</div>
+				</div>
 			</div>
 		)
 	}
@@ -88,6 +95,7 @@ export default class Home extends Component{
 		//请求banner图数据
 		Services.getHomeBannerData()
 		.then((data)=>{
+			console.log(data)
 			data.push(data[0]);
 			this.setState({bannerData:data})
 			mySwiper.update()
@@ -106,15 +114,22 @@ export default class Home extends Component{
 			//console.log(data)
 			this.setState({upComingMoviesData:data})
 		})
-		
+
+		window.addEventListener('scroll', this.orderScroll.bind(this))
 		
 	}
+
+	orderScroll() {
+        console.log('scroll');
+	}
+
 	componentDidMount(){     
 	    mySwiper = new Swiper (this.refs.banner, {
 		    loop: true,
 		    autoplay:1500
 	    })        
 	}
+
 	goDetilAction(id){
 	    console.log(id)
 		this.state.history.push({
@@ -122,10 +137,15 @@ export default class Home extends Component{
 			search: `?id=${id}`			
 		})
 	}
+
 	moreMovies(x){
 		this.state.history.push({
 			pathname:'/movie',
 			search: `?id=${x}`			
 		})
+	}
+	handleWheel(){
+	  var  top= this.refs.scrolldom.scrollTop
+	  console.log(top)
 	}	
 }

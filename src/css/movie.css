@@ -19,7 +19,8 @@
     text-align: center;
     font-size: 16px;
     line-height: 46px;
-    color: #6a6a6a;
+    color: #fe6e00;
+    border-bottom: solid;
     cursor: pointer;
 }
 .movie .movietop a .moviecoming{
@@ -117,4 +118,6 @@
 .movie .movie-list .movies-cont .text-cont .grade .date{
     color: #ffb375;
 }     
-      
+
+
+

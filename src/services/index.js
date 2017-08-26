@@ -54,9 +54,9 @@ function getHomeUpComingMoviesData(){
 
 //请求电影部分数据  正在热映
 //http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7
-function getMoviesDataPlay(){
+function getMoviesDataPlay(n){
     return new Promise((resolve, reject)=>{
-    	axios.get(`${API.homeData}/film/now-playing?page=1&count=7`)
+    	axios.get(`${API.homeData}/film/now-playing?page=${n}&count=7`)
     	.then((res)=>{
     		//console.log(res)
     		resolve(res.data.data.films)
@@ -70,9 +70,9 @@ function getMoviesDataPlay(){
 
 //请求电影部分数据  即将上映
 //http://m.maizuo.com/v4/api/film/coming-soon?page=1&count=7
-function getMoviesDataComing(){
+function getMoviesDataComing(m){
     return new Promise((resolve, reject)=>{
-    	axios.get(`${API.homeData}/film/coming-soon?page=1&count=7`)
+    	axios.get(`${API.homeData}/film/coming-soon?page=${m}&count=7`)
     	.then((res)=>{
     		//console.log(res)
     		resolve(res.data.data.films)
@@ -150,9 +150,10 @@ function getStoreBannerData(){
 
 //请求商城商品列表数据
 //http://aura.maizuo.com/api/recommend/home?page=1&num=20
-function getStoreListData(){
+function getStoreListData(x){
+	console.log('服务部分的X:   '+x)
     return new Promise((resolve, reject)=>{
-    	axios.get(`${API.storeData}/recommend/home?page=1&num=20`)
+    	axios.get(`${API.storeData}/recommend/home?page=${x}&num=20`)
     	.then((res)=>{
 			//console.log(res)
 			resolve(res.data.data.list)	

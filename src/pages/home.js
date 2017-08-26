@@ -16,10 +16,13 @@ export default class Home extends Component{
 			bannerData:[],
 			hotMoviesData:[],
 			upComingMoviesData:[],
-			history:rest[0].history
+			history:rest[0].history,
+			isAppear:false
 		}
 	}
 	render(){
+
+		var apperar={bottom:this.state.isAppear?'0':'-58px'}
 		
 		return (
 			<div class='page home' onWheel={this.handleWheel.bind(this)} ref='scrolldom'>
@@ -82,7 +85,7 @@ export default class Home extends Component{
 				       <span onClick={this.moreMovies.bind(this,'coming')}>更多即将上映电影</span>
 				    </div>
 				</div>
-				<div class='go-top'>
+				<div class='go-top' style={apperar} onClick={this.goTopAction.bind(this)}>
 					<div class='go-top-cont'>
 						&uArr;
 					</div>
@@ -145,7 +148,16 @@ export default class Home extends Component{
 		})
 	}
 	handleWheel(){
-	  var  top= this.refs.scrolldom.scrollTop
-	  console.log(top)
+
+	    var scrollTop = this.refs.scrolldom.scrollTop;
+		if(scrollTop>=100){
+			this.setState({isAppear:true})            
+		}else{
+			this.setState({isAppear:false})   
+		}
+	    
+	}
+	goTopAction(){
+		 this.refs.scrolldom.scrollTop=0
 	}	
 }

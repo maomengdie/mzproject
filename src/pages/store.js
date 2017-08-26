@@ -17,13 +17,14 @@ export default class Store extends Component{
 			classifyData:[],
 			centerData:[],
 			bigClassifyData:[],
-			storeListData:[]
+			storeListData:[],
+			x:1
 		}
 	}
 	render(){
 		
 		return (
-			<div class='page store'>
+			<div class='page store' onWheel={this.handleWheel.bind(this)} ref='scrolldom'>
 				<div ref='storebanner' class="swiper-container">
 				    <div class="swiper-wrapper">
 				        {
@@ -69,20 +70,21 @@ export default class Store extends Component{
 							this.state.bigClassifyData.map((item,index)=>{
 				        		return (
 				        			<div key={index} class='classify-cont'>	
-                                         <a href={item.url}><img src={item.imageSrc}/></a>
+                                        <a href={item.url}><img src={item.imageSrc}/></a>
 										 <div class='small-classify-cont'>
+											 
 											{
 												item.products.map((it,i)=>{
 													return (
-                                                        <div key={i} class='small-classify'>
+														<div key={i} class='small-classify'>
 															<a>
 																<img src={it.image}/>
 																<p>{it.name}</p>
 																<span>￥{it.price/100+'.00'}</span>
 															</a>
-													    </div>
-													 )
-												 })
+														</div>
+													)
+												}) 
 											}
 											<div class='last-small-classify'>
 												<a>
@@ -91,7 +93,7 @@ export default class Store extends Component{
 												    </span>
 												</a>												
 											</div>
-										 </div>
+										 </div> 
 									</div>
 				        		)
 				        	})
@@ -133,13 +135,13 @@ export default class Store extends Component{
 		//请求banner图以及商品分类数据
 		Services.getStoreBannerData()
 		.then((data)=>{
-			//console.log(data)
+			console.log(data)
 			this.setState({bannerData:data})
 			data.splice(10,0,data[8]);
 			this.setState({bannerImg:data.slice(8,11)})
 			this.setState({classifyData:data.slice(0,8)})
 			this.setState({centerData:data.slice(11,13)})
-			this.setState({bigClassifyData:data.slice(13,20)})
+			this.setState({bigClassifyData:data.slice(16,22)})
 		})
 
 		//请求商品列表数据
@@ -161,5 +163,26 @@ export default class Store extends Component{
 	}
 	goDetilAction(url){
 		console.log(url)
+	}
+	handleWheel(){
+
+		var clientHeight = this.refs.scrolldom.clientHeight;
+		var scrollHeight = this.refs.scrolldom.scrollHeight;		
+		var scrollTop = this.refs.scrolldom.scrollTop;
+		var distance = 	scrollHeight-scrollTop;
+		console.log(distance)
+		//下拉加载更多商品列表数据
+		if(distance<=clientHeight+10){
+
+		     this.setState({x:this.state.x+1})   
+			 console.log(this.state.x)	
+			//请求商品列表数据
+			Services.getStoreListData(this.state.x)
+			.then((data)=>{
+				//console.log(data)
+				this.setState({storeListData:this.state.storeListData.concat(data)})
+			})
+		}
+		
 	}
 }

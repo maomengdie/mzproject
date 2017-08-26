@@ -4,6 +4,7 @@
 .home{
 	background: #eee;
 	overflow: auto;
+	transition: 2s all ease;
 }
 
 .home .swiper-container {

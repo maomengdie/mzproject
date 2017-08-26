@@ -16,7 +16,9 @@ export default class Movie extends Component{
 			rightCheck:false,
 			moviesData:[],
 			history,
-			moviesData01:[]
+			moviesData01:[],
+			n:1,
+			m:1
 		}
 	}
 	render(){
@@ -28,8 +30,9 @@ export default class Movie extends Component{
 			color:this.state.rightCheck?"#fe6e00":"#6a6a6a",
 			borderBottom:this.state.rightCheck?"solid":"none"
 		}
+		var apperar={bottom:this.state.isAppear?'0':'-58px'}
 		return (
-			<div class='page movie'>
+			<div class='page movie' onWheel={this.handleWheel.bind(this)} ref='scrolldom'>
 				<div class='movietop'>
 				   <a >
 				        <span class='moviehot' onClick={this.chackActionLeft.bind(this)} style={leftStyle}>正在热映</span>
@@ -98,6 +101,11 @@ export default class Movie extends Component{
 				    	})
 				    }
 				</ul>
+				<div class='go-top' style={apperar} onClick={this.goTopAction.bind(this)}>
+					<div class='go-top-cont'>
+						&uArr;
+					</div>
+				</div>
 			</div>
 		)
 	}
@@ -144,6 +152,49 @@ export default class Movie extends Component{
 			pathname:'/moviedetil',
 			search: `?id=${id}`			
 		})
+	}
+	handleWheel(){
+
+		var clientHeight = this.refs.scrolldom.clientHeight;
+		var scrollHeight = this.refs.scrolldom.scrollHeight;		
+		var scrollTop = this.refs.scrolldom.scrollTop;
+		var distance = 	scrollHeight-scrollTop;
+
+		if(scrollTop>=100){
+			this.setState({isAppear:true})            
+		}else{
+			this.setState({isAppear:false})   
+		}
+
+		
+		//下拉加载更多热映电影数据
+		if(distance<=clientHeight+10&&this.state.show){
+		     this.setState({n:this.state.n+1})   
+            //请求电影部分热映电影数据
+			Services.getMoviesDataPlay(this.state.n)
+			.then((res)=>{
+				this.setState({moviesData:this.state.moviesData.concat(res)});	
+			})
+		}
+		
+		
+		//下拉加载更多即将上映电影数据
+		if(distance<=clientHeight+10&&!this.state.show){
+			this.setState({m:this.state.m+1}) 
+            //请求电影部分即将上映电影数据  
+			Services.getMoviesDataComing(this.state.m)
+			.then((res)=>{
+				//console.log(res)	
+				this.setState({moviesData01:this.state.moviesData01.concat(res)});	
+			})
+		}
+
+
+	    
+	}
+	goTopAction(){
+		
+		 this.refs.scrolldom.scrollTop=0
 	}
 
 }

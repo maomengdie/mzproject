@@ -17,8 +17,9 @@ export default class Cinema extends Component{
 		}
 	}
 	render(){
+		var apperar={bottom:this.state.isAppear?'0':'-58px'}
 		return (
-			<div class='page cinema' >
+			<div class='page cinema' ref='scrolldom'>
 				<ul class='cinemalist'>
 				    {   
 					    this.state.cinemaData.map((item,index)=>{
@@ -74,6 +75,11 @@ export default class Cinema extends Component{
 					    }) 
 				   } 
 				</ul>
+				<div class='go-top' style={apperar} onClick={this.goTopAction.bind(this)}>
+					<div class='go-top-cont'>
+						&uArr;
+					</div>
+				</div>
 			</div>
 		)
 	}
@@ -91,5 +97,21 @@ export default class Cinema extends Component{
 			console.log(data)
 		    this.setState({cinemaData:data})
 		})
+	}
+	handleWheel(){
+
+		var scrollTop = this.refs.scrolldom.scrollTop;
+			
+		if(scrollTop>=100){
+			this.setState({isAppear:true})            
+		}else{
+			this.setState({isAppear:false})   
+		}
+
+	
+	    
+	}
+	goTopAction(){
+		 this.refs.scrolldom.scrollTop=0
 	}		
 }

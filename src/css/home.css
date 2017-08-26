@@ -5,6 +5,7 @@
 	background: #eee;
 	overflow: auto;
 	transition: 2s all ease;
+	-ms-scroll-translation: 2s all ease;
 }
 
 .home .swiper-container {

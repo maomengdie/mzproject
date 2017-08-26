@@ -187,14 +187,16 @@ export default class Movie extends Component{
 				//console.log(res)	
 				this.setState({moviesData01:this.state.moviesData01.concat(res)});	
 			})
-		}
-
-
-	    
+		} 
 	}
 	goTopAction(){
-		
-		 this.refs.scrolldom.scrollTop=0
+		var timer=setInterval(()=>{
+           if(!this.refs.scrolldom.scrollTop<=0){
+			   this.refs.scrolldom.scrollTop-=100  
+		   }else{
+              clearInterval(timer)
+		   }
+		},30)	
 	}
 
 }

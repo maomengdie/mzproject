@@ -158,6 +158,12 @@ export default class Home extends Component{
 	    
 	}
 	goTopAction(){
-		 this.refs.scrolldom.scrollTop=0
+		var timer=setInterval(()=>{
+           if(!this.refs.scrolldom.scrollTop<=0){
+			   this.refs.scrolldom.scrollTop-=90  
+		   }else{
+              clearInterval(timer)
+		   }
+		},30)	
 	}	
 }
